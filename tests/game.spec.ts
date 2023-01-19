@@ -112,8 +112,8 @@ describe("Tic Tac Toe Game", () => {
         expect(myGame.isDraw()).toBeFalsy();
     })
     // TODO: How to test UI/user interaction in jest
-    // it.todo('should loop game with player inputs and machine move until there is a winner or draw', () => {
-    //     let myGame = new Game();
-    //     expect(myGame.runGame()).toBe("X")
-    // });
+    it('should loop game with player inputs and machine move until there is a winner or draw', () => {
+        let myGame = new Game();
+        expect(myGame.runGame()).toBe("X")
+    });
 })
