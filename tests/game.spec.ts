@@ -4,21 +4,21 @@ import {
 } from './../src/game'
 
 describe("Tic Tac Toe Game", () => {
-    it('should have JB pick a side X', async () => {
+    it('should have J pick a side X', async () => {
         let myGame = new Game();
         jest.spyOn(myGame, 'getInputFromReadline').mockReturnValue(new Promise(resolve => resolve('X')))
         const data = await myGame.inputPlayerSelection();
         expect(data).toBe('X');
     })
 
-    it('should allow Jonas to randomly select O', async () => {
+    it('should allow J to randomly select O', async () => {
         let myGame = new Game();
         jest.spyOn(myGame, 'getInputFromReadline').mockReturnValue(new Promise(resolve => resolve('O')))
         const data = await myGame.inputPlayerSelection();
         expect(data).toBe('O');
     })
 
-    // Jonas:
+    // J:
     it('should not allow X and O together only one team', async () => {
         let myGame = new Game();
         jest.spyOn(myGame, 'getInputFromReadline').mockReturnValue(new Promise(resolve => resolve('XO')))
@@ -26,15 +26,15 @@ describe("Tic Tac Toe Game", () => {
         expect(data).not.toBe('XO');
     })
 
-    // Jonas: What if I choose T 
+    // J: What if I choose T 
     it('should not allow T only X or O', async () => {        
         let myGame = new Game();
         jest.spyOn(myGame, 'getInputFromReadline').mockReturnValue(new Promise(resolve => resolve('T')))
         const data = await myGame.inputPlayerSelection();
         expect(data).not.toBe('T');
     })
-    // Jonas: What if I should select
-    // TODO: Jonas: What if I want to play aganst you(Me) HXH
+    // J: What if I should select
+    // TODO: J: What if I want to play aganst you(Me) HXH
     it('should select the machine team', () => {
         let myGame = new Game();
         jest.spyOn(myGame, 'getPlayer').mockReturnValue('X')
